@@ -1,0 +1,5 @@
+#!/bin/sh
+
+cd /home/api-nourriture
+git pull
+forever restart app.js
