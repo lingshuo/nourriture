@@ -7,7 +7,8 @@ angular.module('Authentication')
     function ($scope, $rootScope, $location, $http,$window, AuthenticationService) {
         // reset login status
         AuthenticationService.ClearCredentials();
-        delete $window.sessionStorage['user'];
+        delete $window.sessionStorage['userid'];
+        delete $window.sessionStorage['username'];
         $scope.message='message';
         $scope.login = function () {
             AuthenticationService.Login($scope.username, $scope.password, function(response) {
