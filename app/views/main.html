@@ -60,7 +60,8 @@
                                                         <div class="caption">
                                                             <h3>{{recipe.name}}</h3>
                                                             <p>{{recipe.description }}</p>
-                                                            <p><a ng-click="getComment('{{recipe._id}}')" data-toggle="modal" data-target=".modal-detail" href="javascript:;" class="btn btn-primary" role="button">Detail</a> <a href="javascript:;" class="btn btn-default" role="button">Follow</a></p>
+                                                            <p><button ng-click="getDetail('{{recipe._id}}')" data-toggle="modal" data-target=".modal-detail" class="btn btn-primary" role="button">Detail</button>
+                                                            	<button ng-click="getComment('{{recipe._id}}')" data-toggle="modal" data-target=".modal-comment" class="btn btn-default" role="button">Comments</button> </p>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -72,15 +73,15 @@
                                 
                                 </div><!-- /.col-xs-12 -->
 </row><!-- row -->
-<div class="modal fade modal-detail" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+<div class="modal fade modal-comment" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-lg">
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-        <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+        <h4 class="modal-title" id="myModalLabel">Comments</h4>
       </div>
       <div class="modal-body">
-	<div class="col-md-9 message">
+	<div class="col-md-12 message">
 <div ng-repeat="comment in commentList" class="media message-detail">
                                         <div class="pull-left">
                                             <img src="img/samples/avatar-1.jpg" class="media-object">
@@ -95,7 +96,7 @@
                                                         <a href="javascript:void(0)" class="btn btn-default" data-toggle="tooltip" title="" data-original-title="Delete Message"><i class="fa fa-times"></i></a>
                                                     </div>
                                                 </div>
-
+													</div>
                                                 <div class="media-heading">
                                                                                                             <h4>Egestas Justo Ligula</h4>
                                                                                                         <p><a href="profile.html">Jimmy White</a> <span class="small muted pull-right">5 minutes ago</span></p>
@@ -104,15 +105,52 @@
                                                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Curabitur blandit tempus porttitor. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Sed posuere consectetur est at lobortis. Aenean lacinia bibendum nulla sed consectetur. Cras justo odio, dapibus ac facilisis in, egestas eget quam.</p>                                            </div><!-- /.media-body -->
                                         </div><!-- /.bubble -->
                                     </div>
+                                    <!-- 发表评论 -->
+                                    <form action="send-msg.action" role="form" class="form-horizontal">
+
+										<div class="form-group">
+											<div class="col-sm-12">
+												<textarea name="mcontent" class="form-control" rows="6" id="message" placeholder="请输入消息内容"></textarea>
+											</div>
+										</div>
+										<!-- /.form-group -->
+										<div class="form-group">
+											<div class="col-sm-4 col-sm-offset-8">
+												<button type="submit" class="btn btn-primary">发送</button>
+												<a href="user-announce.action" class="btn btn-default">取消</a>
+											</div>
+										</div>
+										<!-- /.form-group -->
+
+									</form>
 	</div>
       </div>
-      <div class="modal-footer">
+      <!--<div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
         <button type="button" class="btn btn-primary">Save changes</button>
-      </div>
+      </div>-->
     </div>
   </div>
-</div>
+  <!-- END OF comment -->
+  <!-- START OF  detail -->
+  <div class="modal fade modal-detail" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+        <h4 class="modal-title" id="myModalLabel">Comments</h4>
+      </div>
+      <div class="modal-body">
+
+	</div>
+      </div>
+      <!--<div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>-->
+    </div>
+  </div>
+  <!-- END OF detail -->
 <!--<div >
 	<p>Userinfo</p>
   	Username:{{username}}<br>

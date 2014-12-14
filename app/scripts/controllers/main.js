@@ -32,8 +32,29 @@ angular.module('webNourritureApp')
     });
   };
 //获得某个菜谱的评论
-$scope.remove=function  (id) {
+$scope.getComment=function  (id) {
   
+    $http.get('api/comments').success(function  (data) {
+       $scope.commentList=data;
+    });
+  };
+  //获得某个菜谱的评论
+$scope.getDetail=function  (id) {
+  		 	$http.get('api/recipes/'+$routeParams.id)
+    	.success(function (data){
+    		$scope.detail=data[0];
+    		$http.get('api/users/'+$scope.detail.user)
+    		.success(function  (data) {
+    			if (data[0]) {
+    				$scope.author=data[0].username;
+    			} else{
+    				$scope.author='anonymous';
+    			};
+    			
+    		});
+    	}).error(function  (data) {
+    		$scope.detail='error';
+    	});
     $http.get('api/comments').success(function  (data) {
        $scope.commentList=data;
     });

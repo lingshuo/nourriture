@@ -52,7 +52,7 @@
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
 <div class="navbar navbar-default navbar-fixed-top">
-            <div class="header">
+            <div ng-controller='IndexCtrl' class="header"> 
                 <div class="navbar-header">
                     <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target=".navbar-collapse">
                         <span class="sr-only">Toggle navigation</span>
@@ -68,8 +68,8 @@
                         <li><a href="#/about">About</a></li>
                     </ul>
                     <ul class="nav navbar-nav navbar-right">
-                        <li><a href="#/login">Login</a></li>
-                        <li><a href="#/register">Register</a></li>
+                        <li><a href="#/login" ng-bind='isLogin'>Login</a></li>
+                        <li><a href="#/register" ng-bind='isReg'>Register</a></li>
                     </ul>
                 </div>
             </div>
@@ -128,6 +128,7 @@
         <script src="scripts/controllers/login.js"></script>
         <script src="scripts/controllers/services.js"></script>
         <script src="scripts/controllers/register.js"></script>
+        <script src="scripts/controllers/index.js"></script>
         <!-- endbuild -->
 </body>
 </html>
