@@ -47,9 +47,9 @@ body{
                                                 <div class="col-xs-12">
                                                     <p class="align-right"><a href="oxcoder_unsigned_forgetp.html" style="color:#c0c0c0;"><small>忘记密码？</small></a></p>
                                                     <span class="help-block" id="hint1" style="margin-left:20px;" />
-                                                    <span class="help-block has-error" id="hint2" style="">
+                                                    <!--<span class="help-block has-error" id="hint2" style="">
                                                         <small class="help-block">用户名或密码错误</small>
-                                                    </span>
+                                                    </span>-->
                                                 </div>    
                                                 <div class="col-xs-12">
                                                     <button type="submit" class="btn btn-primary btn-lg" style="margin-left:20px;border-radius: 3px;">登录</button>
@@ -61,7 +61,7 @@ body{
                                         </div><!-- /.panel-body -->
                                         <div class="panel-body col-md-6">
                                             <div style="margin:20px;">
-                                                <p class="align-left" style="font-size:16px;color:#666;">还没有帐号？<a href="oxcoder_signup.html">立即注册</a></p>
+                                                <p class="align-left" style="font-size:16px;color:#666;">还没有帐号？<a href="#/register">立即注册</a></p>
                                                 <img src="img/01.png" width="250px;">
                                             </div>
                                         </div><!-- /.panel-body -->

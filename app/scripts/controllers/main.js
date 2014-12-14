@@ -31,7 +31,13 @@ angular.module('webNourritureApp')
         $scope.recipelist='error';
     });
   };
-
+//获得某个菜谱的评论
+$scope.remove=function  (id) {
+  
+    $http.get('api/comments').success(function  (data) {
+       $scope.commentList=data;
+    });
+  };
 $scope.remove=function  (id,index) {
   
     $http.delete('api/recipes/'+id).success(function  () {

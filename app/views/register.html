@@ -1,0 +1,77 @@
+<link href="css/styler/signin.css" rel="stylesheet">
+<link href="css/styler/style_new.css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" href="css/libs/bootstrapValidator.css"/>
+<style type="text/css">
+body{
+	background-image:url(img/bg5.jpg);
+	background-size: cover;
+
+}
+</style>
+<div class="row">
+                <div class="col-md-8 col-md-push-2 col-xs-10 col-xs-push-1 col-sm-8 col-sm-push-2">
+                    <section id="middle">
+
+                        <div id="content" class="signin-page">
+
+                            <div class="panel-group" id="signin-page">
+
+                            <h3 class="panel-title" style="color: #fff;font-size: 2.4em;padding: 25px 25px 10px;text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);">oxcoder 注册</h3>
+                                <div class="panel panel-outline panel-no-padding" style="border:none;">
+                                    <div id="signin" class="panel-collapse collapse in">
+                                        <div class="panel-heading" style="background-color: #6496be;padding:3px;">
+                                            
+                                        </div>
+
+                                        <div class="panel-body col-md-6">
+                                            <form name="form" ng-submit="register()" role="form" id="defaultForm" class="form-horizontal">
+                                                <div class="form-group">
+                                                    <div class="col-xs-12">
+                                                        <div class="input-group">
+                                                            <span class="input-group-addon"><i class="fa fa-envelope"></i></span>
+                                                            <input type="text" name="username" id="username" ng-model="username" required  class="form-control input-lg" placeholder="请输入常用邮箱地址">
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="form-group">
+                                                    <div class="col-xs-12">
+                                                        <div class="input-group">
+                                                            <span class="input-group-addon"><i class="fa fa-key"></i></span>
+                                                            <input type="password" name="password" id="password" ng-model="password" required class="form-control input-lg" placeholder="请输入密码">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <!--<div class="col-xs-12" style="margin-left:20px;">
+                                                    <label>
+                                                        <input type="checkbox" id="agreement" name="check">
+                                                        <small>我已阅读并同意<a href="#tnc-modal" data-toggle="modal">《oxcoder用户协议》</small></a>
+                                                    </label>
+                                                    <span class="help-block" id="hint1" style="margin-left:20px;" />
+                                                </div>-->    
+                                                <div class="col-xs-12">
+                                                    <button type="submit" class="btn btn-primary btn-lg" style="margin-left:20px;border-radius: 3px;" id="submit">注册</button>
+                                                </div>
+                                                <div class="col-xs-12">
+                                                    	<font color="red">{{errInfo}}</font>
+							<font color="green">{{succInfo}}</font>
+                                                </div>  
+                                            </form>
+                                        </div><!-- /.panel-body -->
+                                        <div class="panel-body col-md-6">
+                                            <div style="margin:20px;">
+                                                <p class="align-left" style="font-size:16px;color:#666;">已有帐号?<a data-toggle="collapse" data-parent="#signin-page" href="#/login">直接登录</a></p>
+                                                <img src="img/01.png" width="250px;">
+                                            </div>
+                                        </div><!-- /.panel-body -->
+                                    </div><!-- /.panel-collapse -->
+                                </div><!-- /.panel -->
+                            
+
+
+                        </div><!-- /#content -->
+
+                    </section>
+                </div><!-- /.col-md-10 -->
+
+            </div><!-- /.row -->
